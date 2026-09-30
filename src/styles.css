@@ -77,7 +77,7 @@
 .spotlight { position: absolute; z-index: -1; top: -10rem; left: 50%; width: min(1000px, 95vw); height: 680px; border-radius: 50%; background: radial-gradient(ellipse, oklch(0.92 0.11 18 / .55), transparent 68%); filter: blur(25px); animation: glow 5s ease-in-out infinite; }
 .grain { position: absolute; inset: 0; z-index: 5; opacity: .04; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E"); }
 .birthday-nav { position: absolute; z-index: 20; inset: 0 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 1.5rem clamp(1.25rem, 5vw, 3.5rem); }
-.nav-kicker, .eyebrow, .section-meta, .carousel-hint, .birthday-footer, .admin-trigger, .admin-cta, .editor-note, .memory-placeholder small { letter-spacing: .18em; text-transform: uppercase; font-size: .62rem; }
+.nav-kicker, .eyebrow, .section-meta, .carousel-hint, .birthday-footer, .admin-trigger, .editor-note, .memory-placeholder small { letter-spacing: .18em; text-transform: uppercase; font-size: .62rem; }
 .nav-kicker { color: oklch(0.45 0.045 22 / .7); }
 .admin-trigger { color: oklch(0.45 0.045 22 / .75); border: 1px solid oklch(0.55 0.07 25 / .2); border-radius: 999px; }
 .admin-trigger svg { width: .85rem; }
