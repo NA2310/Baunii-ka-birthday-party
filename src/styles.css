@@ -1,9 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -33,7 +31,6 @@
   --color-cream-paper: oklch(0.995 0.009 79);
   --color-rose-soft: oklch(0.64 0.17 16);
 }
-
 :root {
   --radius: 0.625rem;
   --background: oklch(0.975 0.014 56);
@@ -56,7 +53,6 @@
   --input: oklch(0.86 0.045 28);
   --ring: oklch(0.64 0.17 16);
 }
-
 @layer base {
   * { border-color: var(--color-border); }
   html { min-width: 320px; }
@@ -67,11 +63,9 @@
     font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   }
 }
-
 @keyframes float-slow { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
 @keyframes glow { 0%, 100% { opacity: .35; transform: translateX(-50%) scale(.96); } 50% { opacity: .68; transform: translateX(-50%) scale(1.03); } }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-
 .birthday-shell { position: relative; isolation: isolate; background: radial-gradient(circle at 50% 8%, oklch(0.99 0.02 45), transparent 38%), linear-gradient(135deg, oklch(0.98 0.025 55), oklch(0.95 0.035 26)); }
 .birthday-shell::before { content: ""; position: absolute; inset: 0; opacity: .28; pointer-events: none; background-image: radial-gradient(oklch(0.62 0.08 25 / .14) .7px, transparent .7px); background-size: 6px 6px; mask-image: linear-gradient(to bottom, black, transparent 75%); }
 .spotlight { position: absolute; z-index: -1; top: -10rem; left: 50%; width: min(1000px, 95vw); height: 680px; border-radius: 50%; background: radial-gradient(ellipse, oklch(0.92 0.11 18 / .55), transparent 68%); filter: blur(25px); animation: glow 5s ease-in-out infinite; }
@@ -108,11 +102,49 @@
 .note-aura { position: absolute; inset: 12% 3%; background: oklch(0.82 0.1 20 / .2); filter: blur(32px); transition: .5s; }
 .note-wrap:hover .note-aura, .note-wrap.is-open .note-aura { background: oklch(0.82 0.1 20 / .35); }
 .birthday-note { position: relative; display: block; min-height: 250px; padding: 2.3rem clamp(1.5rem, 6vw, 3.5rem); overflow: hidden; border: 1px solid oklch(0.56 0.06 25 / .12); border-radius: 1rem; background: var(--color-cream-paper); box-shadow: 0 18px 45px oklch(0.36 0.05 22 / .1); transition: transform .5s, min-height .65s cubic-bezier(.2,.8,.2,1); }
-.note-wrap:hover .birthday-note { transform: translateY(-5px); }.note-wrap.is-open .birthday-note { min-height: 390px; }
+.note-wrap:hover .birthday-note { transform: translateY(-5px); }
+.note-wrap.is-open .birthday-note { min-height: 620px; }
 .note-fold { position: absolute; top: 0; right: 0; width: 75px; height: 75px; border-left: 1px solid oklch(0.56 0.06 25 / .11); border-bottom: 1px solid oklch(0.56 0.06 25 / .11); border-radius: 0 0 0 1rem; background: oklch(0.95 0.04 32); box-shadow: inset 4px -4px 10px oklch(0.45 0.05 24 / .05); }
 .note-label { display: flex; align-items: center; gap: .6rem; color: oklch(0.55 0.08 18); font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }.note-label svg { width: 1rem; color: oklch(0.64 0.17 16); }
 .note-closed-copy { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.2rem; }.note-lede, .note-message { font-family: var(--font-serif); color: oklch(0.29 0.035 22); font-size: clamp(1.65rem, 4vw, 2.35rem); line-height: 1.1; }.note-open-prompt { color: oklch(0.52 0.05 22 / .68); font-size: .83rem; }
-.note-open-copy { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 2.4rem; animation: rise .5s ease-out both; }.note-open-copy .note-message { max-width: 18ch; }.note-open-copy img { width: 145px; height: 90px; object-fit: contain; object-position: left bottom; opacity: .68; margin-left: auto; margin-right: 1rem; }.note-signoff { color: oklch(0.62 0.12 16); font-family: var(--font-serif); font-size: 1.35rem; font-style: italic; }
+
+/* ===== FIXED LETTER STYLING ===== */
+.note-open-copy { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 1.4rem; 
+  margin-top: 2.4rem; 
+  animation: rise .5s ease-out both; 
+  align-items: center; 
+  text-align: center; 
+}
+.note-open-copy .note-message {
+  max-width: 42ch;
+  width: 100%;
+  white-space: pre-line;
+  text-align: center;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+.note-open-copy img { 
+  width: 145px; 
+  height: 90px; 
+  object-fit: contain; 
+  object-position: center bottom; 
+  opacity: .68; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.note-signoff { 
+  color: oklch(0.62 0.12 16); 
+  font-family: var(--font-serif); 
+  font-size: 1.35rem; 
+  font-style: italic; 
+  text-align: center; 
+}
+/* ===== END FIXED LETTER STYLING ===== */
+
 .birthday-footer { padding: 2rem 1rem 3rem; text-align: center; color: oklch(0.5 0.05 22 / .58); }
 .sticker-field { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }.floating-sticker { position: absolute; width: 120px; height: 120px; object-fit: cover; mix-blend-mode: multiply; opacity: .46; filter: saturate(.86); animation: float-slow 8s ease-in-out infinite; }.sticker-one { top: 8rem; left: 5%; transform: rotate(-7deg); }.sticker-two { top: 43%; right: 5%; width: 135px; height: 135px; animation-delay: 2s; transform: rotate(8deg); }.sticker-three { bottom: 10rem; left: 7%; width: 105px; height: 105px; animation-delay: 4s; transform: rotate(5deg); }
 .admin-overlay { position: fixed; z-index: 50; inset: 0; display: grid; place-items: center; padding: 1rem; background: oklch(0.2 0.03 20 / .32); backdrop-filter: blur(12px); }.admin-panel { position: relative; width: min(100%, 540px); max-height: min(90vh, 760px); overflow-y: auto; border: 1px solid oklch(0.56 0.06 25 / .18); border-radius: 1.2rem; background: var(--color-cream-paper); box-shadow: 0 30px 90px oklch(0.2 0.03 20 / .24); }.login-panel { padding: 3rem; }.editor-panel { padding: 2rem; }.panel-close { position: absolute; top: 1rem; right: 1rem; color: oklch(0.45 0.045 22 / .68); }
