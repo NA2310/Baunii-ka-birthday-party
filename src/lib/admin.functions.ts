@@ -17,8 +17,7 @@ function getSupabase() {
 }
 
 function sessionConfig() {
-  const secret = process.env["SESSION_SECRET"] || "radha-birthday-secret-2026";
-
+const secret = process.env["SESSION_SECRET"] || "radha-birthday-secret-key-2026-long-enough-32chars";
   return {
     password: secret,
     name: "radha-birthday-admin",
