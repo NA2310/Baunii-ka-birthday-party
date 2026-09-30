@@ -3,11 +3,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight, LockKeyhole, Settings2, Sparkles, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-import stickerCheer from "@/assets/sticker-cheer.jpg";
-import stickerHappy from "@/assets/sticker-happy.jpg";
-import stickerWave from "@/assets/sticker-wave.jpg";
-import belowNote from "@/assets/below-note.jpeg";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -55,23 +50,23 @@ Tera BSF
 };
 
 const stickers = [
-  { src: stickerWave, className: "sticker-one", alt: "Waving character", style: {} },
-  { src: stickerCheer, className: "sticker-two", alt: "Cheering character", style: {} },
-  { src: stickerHappy, className: "sticker-three", alt: "Smiling character", style: {} },
+  { src: "/sticker-wave.jpg", className: "sticker-one", alt: "Waving character", style: {} },
+  { src: "/sticker-cheer.jpg", className: "sticker-two", alt: "Cheering character", style: {} },
+  { src: "/sticker-happy.jpg", className: "sticker-three", alt: "Smiling character", style: {} },
   {
-    src: stickerWave,
+    src: "/sticker-wave.jpg",
     className: "floating-sticker",
     alt: "Wave sticker",
     style: { top: "18%", right: "12%", width: "100px", height: "100px", animationDelay: "1s", transform: "rotate(-12deg)" },
   },
   {
-    src: stickerHappy,
+    src: "/sticker-happy.jpg",
     className: "floating-sticker",
     alt: "Happy sticker",
     style: { bottom: "22%", right: "8%", width: "110px", height: "110px", animationDelay: "3s", transform: "rotate(10deg)" },
   },
   {
-    src: stickerCheer,
+    src: "/sticker-cheer.jpg",
     className: "floating-sticker",
     alt: "Cheer sticker",
     style: { top: "55%", left: "3%", width: "95px", height: "95px", animationDelay: "5s", transform: "rotate(-5deg)" },
@@ -273,7 +268,7 @@ function BirthdayPage() {
               ) : (
                 <span className="note-open-copy">
                   <span className="note-message">{keepsake.message}</span>
-                  <img src={belowNote} alt="A sleepy little character resting beneath the note" />
+                  <img src="/below-note.jpeg" alt="A sleepy little character resting beneath the note" />
                   <span className="note-signoff">with love, always ♡</span>
                 </span>
               )}
