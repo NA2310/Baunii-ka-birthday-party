@@ -48,25 +48,26 @@ Tera BSF
     { id: "seven", url: "", label: "One for the album" },
   ],
 };
+<img src="https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/below-note.jpeg" alt="A sleepy little character resting beneath the note" />
 
 const stickers = [
-  { src: "/sticker-wave.jpg", className: "sticker-one", alt: "Waving character", style: {} },
-  { src: "/sticker-cheer.jpg", className: "sticker-two", alt: "Cheering character", style: {} },
-  { src: "/sticker-happy.jpg", className: "sticker-three", alt: "Smiling character", style: {} },
+  { src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-wave.jpg", className: "sticker-one", alt: "Waving character", style: {} },
+  { src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-cheer.jpg", className: "sticker-two", alt: "Cheering character", style: {} },
+  { src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-happy.jpg", className: "sticker-three", alt: "Smiling character", style: {} },
   {
-    src: "/sticker-wave.jpg",
+    src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-wave.jpg",
     className: "floating-sticker",
     alt: "Wave sticker",
     style: { top: "18%", right: "12%", width: "100px", height: "100px", animationDelay: "1s", transform: "rotate(-12deg)" },
   },
   {
-    src: "/sticker-happy.jpg",
+    src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-happy.jpg",
     className: "floating-sticker",
     alt: "Happy sticker",
     style: { bottom: "22%", right: "8%", width: "110px", height: "110px", animationDelay: "3s", transform: "rotate(10deg)" },
   },
   {
-    src: "/sticker-cheer.jpg",
+    src: "https://raw.githubusercontent.com/NA2310/Baunii-ka-birthday-party/main/public/sticker-cheer.jpg",
     className: "floating-sticker",
     alt: "Cheer sticker",
     style: { top: "55%", left: "3%", width: "95px", height: "95px", animationDelay: "5s", transform: "rotate(-5deg)" },
