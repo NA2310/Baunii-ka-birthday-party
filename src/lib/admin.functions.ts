@@ -18,7 +18,7 @@ function getSupabase() {
 
 function sessionConfig() {
   const secret = process.env["SESSION_SECRET"] || "radha-birthday-secret-2026";
-  
+
   return {
     password: secret,
     name: "radha-birthday-admin",
@@ -39,7 +39,7 @@ function passwordMatches(input: string, expected: string) {
 }
 
 export const unlockAdmin = createServerFn({ method: "POST" })
-  .inputValidator((data) => z.object({ password: z.string().min(1) }).parse(data))
+  .validator((data) => z.object({ password: z.string().min(1) }).parse(data))
   .handler(async ({ data }) => {
     const expected = process.env["SITE_PASSWORD"] || "loveu";
     if (!passwordMatches(data.password, expected)) return { ok: false as const };
@@ -79,7 +79,7 @@ export const getKeepsake = createServerFn({ method: "GET" }).handler(async () =>
 
 // Save keepsake to Supabase
 export const saveKeepsake = createServerFn({ method: "POST" })
-  .inputValidator((data) =>
+  .validator((data) =>
     z
       .object({
         heading: z.string(),
