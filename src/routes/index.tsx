@@ -17,7 +17,35 @@ type Keepsake = { heading: string; message: string; memories: Memory[] };
 
 const defaultKeepsake: Keepsake = {
   heading: "Happy Birthday Radha jii",
-  message: "Happy Birthday Radha jii ❤️ You’re the best thing that happened to me. Thank you for existing.",
+  message: `My Dearest Radha jii,
+
+Aaj ka din finally aa hi gaya.
+
+Plan kuch aur tha, par shayad Bhagwan ko laga ki abhi thodi der aur intezaar karwana hai. Main samajh nahi pa raha ki unko kya jawab du… kyunki main sach mein bahut taras raha hu tujhse milne ke liye. Dil mein ek ajeeb si bechaini si rehti hai, jaise kuch adhura hai.
+
+Naseeb toh mera accha hai jo itni cutie si, pure dil wali bestuu mili.
+
+Par utna hi bura bhi hai ki hum itne door rehte hain.
+
+Chalta hai. Dooriyan kam hongi. Aur jab hongi, tab main tujhe aasani se chhodne wala nahi. Phir saath mein birthday manayenge, properly.
+
+Aaj tera din hai. Khush reh. Celebrate kar.
+
+Devdas wali energy mat nikalna, tu usme bahut ajeeb lagti hai 😂
+
+Paisa kama, acche se kha, aur haan… kabhi mereko bhi khila dena.
+
+Sorry late wishes ke liye. Gift ready tha, par last moment pe sab kharab ho gaya. Naseeb hi aisa hai shayad. Jo bhi ban paya, woh tere liye hi hai. Zyada nahi hai, bas dil se hai.
+
+Happiest Birthday, Darling.
+
+Tu special hai. Kabhi mat bhoolna.
+
+Tera BSF
+
+😽❤️
+
+(Aaj kuch galat bol diya toh pit jaavunga isliye achi trh se mskaa lgaa rha hu... 😁 blush kr le thoda sa)`,
   memories: [
     { id: "one", url: "", label: "A little moment" },
     { id: "two", url: "", label: "Our favorite kind" },
@@ -65,7 +93,7 @@ function BirthdayPage() {
   const [dragStart, setDragStart] = useState<number | null>(null);
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("radha-birthday-keepsake");
+    const saved = window.localStorage.getItem("radha-birthday-keepsake-v2");
     if (saved) {
       try {
         const parsed = JSON.parse(saved) as Keepsake;
